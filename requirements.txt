@@ -1,0 +1,16 @@
+# api deps
+fastapi==0.89.1
+uvicorn[standard]==0.20.0
+sqlalchemy>=1.4
+python-decouple==3.6
+alembic==1.8.1
+aiosqlite==0.18.0
+httpx==0.23.3
+databases[sqlite]==0.7.0
+
+# scraping deps
+beautifulsoup4==4.11.1
+certifi==2022.12.7
+lxml==4.9.2
+soupsieve==2.3.2.post1
+urllib3==1.26.14
