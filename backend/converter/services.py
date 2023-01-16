@@ -3,7 +3,7 @@ from typing import List
 
 # Own Imports
 from backend.config.settings import settings
-from backend.converter.scraper import MiddleRate
+from backend.converter.middle_rate import MiddleRate
 from backend.converter.xe_currency import Currency
 from backend.converter.orm import converter_orm, currency_orm
 from backend.converter.models import ConversionHistory, Currency

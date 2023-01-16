@@ -51,8 +51,6 @@ class MiddleRate:
         """
         Parse a string of characters to extract any
         character(s) occuring once or multiple times between '>' & '<'.
-
-        content: str
         """
         pattern = r"(?<=\>).+?(?=\<)"
         return "".join(re.findall(pattern, str(content)))
