@@ -4,7 +4,7 @@ from typing import List
 # Own Imports
 from backend.config.settings import settings
 from backend.converter.middle_rate import MiddleRate
-from backend.converter.xe_currency import Currency
+from backend.converter.xe_currency import list_of_currencies
 from backend.converter.orm import converter_orm, currency_orm
 from backend.converter.models import ConversionHistory, Currency
 
@@ -39,10 +39,11 @@ async def convert(
     return conversion_history
 
 
-async def fetch_and_create_currencies() -> ...:
+async def fetch_and_create_currencies() -> str:
 
-    xe_currency = Currency(token=settings.XE_TOKEN, id=settings.XE_ID)
+    xe_currency = Currency()
     currencies = xe_currency.list_of_currencies()
+    print(currencies)
 
     for curr in currencies:
         await currency_orm.create(curr["currency_name"], curr["iso"])
@@ -50,15 +51,17 @@ async def fetch_and_create_currencies() -> ...:
     return "Added currencies to database!"
 
 
-async def get_all_currencies() -> List[Currency]:
+def get_all_currencies() -> List[Currency]:
     """
     This function returns a list of all the currencies in the database
 
     :return: A list of all the currencies in the database.
     """
 
-    currencies = await currency_orm.get()
-    return currencies
+    # await fetch_and_create_currencies()
+    # currencies = await currency_orm.get()
+
+    return list_of_currencies()
 
 
 async def get_all_conversions() -> List[ConversionHistory]:

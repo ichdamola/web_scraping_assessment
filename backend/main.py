@@ -26,10 +26,10 @@ app.include_router(public_router)
 app.include_router(private_router)
 
 
-@app.on_event("startup")
-async def startup():
-    tasks = BackgroundTasks()
-    tasks.add_task(fetch_and_create_currencies)
+# @app.on_event("startup")
+# async def startup():
+#     tasks = BackgroundTasks()
+#     tasks.add_task(fetch_and_create_currencies)
 
 
 if __name__ == "__main__":

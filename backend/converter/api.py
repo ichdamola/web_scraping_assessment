@@ -30,11 +30,11 @@ async def convert_currency(payload: ConvertSchema):
     return conversion_history.to_dict()
 
 
-@private_router.get("/currencies", response_model=List[CurrencySchema])
+@private_router.get("/currencies")
 async def get_currencies():
     """This API view is responsible for retrieving all the currencies."""
 
-    currencies = await services.get_all_currencies()
+    currencies = services.get_all_currencies()
     return currencies
 
 
