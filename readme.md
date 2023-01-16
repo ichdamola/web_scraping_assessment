@@ -22,3 +22,4 @@ XE_TOKEN=o10eanv092m7sll7gq3c6eidg9
 ```python backend/main.py```
 Note: If `ModuleNotFoundError:` Run ```export PYTHONPATH=$PWD``` then repeat *step 4*
 5. Visit `http://0.0.0.0:7000/doc` via a browser of your choice to access the API doc.
+6. On the API doc, run the `/api-keys` to get a list of the authorized keys, use any of the keys to authorize the doc.
