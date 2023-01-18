@@ -43,7 +43,6 @@ async def fetch_and_create_currencies() -> str:
 
     xe_currency = Currency()
     currencies = xe_currency.list_of_currencies()
-    print(currencies)
 
     for curr in currencies:
         await currency_orm.create(curr["currency_name"], curr["iso"])
@@ -57,9 +56,6 @@ def get_all_currencies() -> List[Currency]:
 
     :return: A list of all the currencies in the database.
     """
-
-    # await fetch_and_create_currencies()
-    # currencies = await currency_orm.get()
 
     return list_of_currencies()
 

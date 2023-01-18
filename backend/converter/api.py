@@ -3,11 +3,8 @@ from typing import List
 
 # Own Imports
 from backend.converter.router import private_router, public_router
-from backend.converter.schemas import (
-    ConvertSchema,
-    CurrencySchema,
-    ConversionSchema,
-)
+from backend.converter.schemas import ConvertSchema
+
 from backend.converter import services
 from backend.converter.utils import read_from_apikey_json
 

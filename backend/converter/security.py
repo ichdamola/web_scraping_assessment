@@ -1,5 +1,5 @@
 # FastAPI Imports
-from fastapi import HTTPException, status, Security
+from fastapi import HTTPException, Security
 from fastapi.security import APIKeyHeader
 
 # Own Imports
